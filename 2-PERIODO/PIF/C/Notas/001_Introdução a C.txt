@@ -1,0 +1,39 @@
+-> Estrutura basica:
+
+#include <stdio.h>
+
+int main(){
+
+  ........ 
+  
+  return 0;
+}
+
+
+-> Importante:
+
+1. Nunca esqueça o ; ou as {}
+2. Todas as variaveis devem ter o tipo definido no inicio do codigo
+
+
+-> Comandos basicos:
+
+printf("Hello Word\n");
+scanf("%s", &nome);
+
+
+-> Variaveis:
+
+Char    | caracteres            | 1 byte               | %c
+Int     | numeros inteiros      | 2 ou 4 bytes         | %d
+float   | numeros reais         | 4 bytes              | %f
+double  | numeros reais         | 8 bytes              | %lf
+
+String  | lista de caracteres   | N*(1 byte)           | %s
+Array   | lista de numeros      | N*(2, 4 ou 8 bytes)  | %d ou %f 
+
+obs.: em caso de float, você pode definir a precisão (número de casa
+decimais) que deseja trabalhar um número ao lado do f (ex.: %.2f)
+
+obs.2: não tem string em c, definimos uma string de seguinte forma: 
+Char nome[n. caracteres +1] = ...

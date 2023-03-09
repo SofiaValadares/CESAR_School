@@ -1,0 +1,68 @@
+-> Variaveis logicas:
+soma           | a+b
+subritração    | a-b
+multiplicação  |a*b
+divisão        |a/b
+resto          |a%b
+igualdade      | a==b
+diferensa      | a!=b
+ou             | a||b
+e              | a&&b
+
+\n    | Nova linha. Posiciona o cursor no inicio de uma nova linha
+\t    | Tabulação horizontal. Move o cursor para a proxima marca parada
+      | de tabulação.
+\r    | Carrige return(CR). Posiciona o cursor no inicio da linha atual; 
+      | não avança para a proxima linha.
+\a    | Alerta. Faz soar campainha(Bell) do sistema
+\\    | Barra invertida(backslach). Imprime um caracteres de barra invertida
+      | em uma instrução printf.
+\"    | Aspas duplas. Imprime um caracteres de barra aspas duplas em uma 
+      | instrução printf.
+
+
+-> Estrutura de decisão:
+
+if(condição){
+      codigo
+}
+else if(2ª condição){
+      codigo caso primeira condição for falsa
+}
+else{
+      codigo caso nenhuma condição verdadeira
+}
+
+
+-> Estutura de reperição:
+
+LAÇO LOOP
+Preferencialmente usado quando a inicialização e atualização são simples,
+e quando sabemos de antemão o número de vezes que precisamos repetir o loop.
+
+for(iniciação;condição;atualização){
+      codigo;
+}
+
+LAÇO WHILE
+Preferencialmente usado quando a inicialização e atualização são mais complexas e não sabemos 
+ao certo o número de vezes que vamos repetir o loop (depende de uma condição do fluxo do programa).
+
+iniciação;
+
+while(condição){
+      codigo;
+      ...
+      atualização;
+}
+
+LAÇO DO WHILE
+Semelhante a while loop contudo executa ao menos uma vez as operações, 
+uma vez que executa a comparação apenas no final da execução.
+iniciação;
+
+do{
+      codigo;
+
+      atualização;
+}while(condição)
