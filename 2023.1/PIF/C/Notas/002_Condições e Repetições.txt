@@ -66,3 +66,31 @@ do{
 
       atualização;
 }while(condição)
+
+-> Mais avançado:
+
+BREAK                                       CONTINUE
+Comando força saida do loop                 Volta para o inicio do loop, pulando 
+                                            o codigo que vem depois dele no loop.
+
+                                           
+   while(condição){                         __while(condição){
+         .....                              |       .....
+  _______break;                             |_______continue;
+ |       .....                                      .....
+ | }                                          }
+ |__
+
+ GOTO                                       SWITCH CASE
+ O comando goto causa o desvio do           Consiste da palavra-chave switch seguida 
+ controle do programa para a instrução      do nome de uma variável ou constante
+ seguinte ao rótulo com o nome indicado.
+
+
+ if(condição){                              switch(variavel){
+      goto error_1;                             case condição:
+ }                                                 .....
+                                                   break;
+ error_1:                                       default:
+      ......;                                      .....
+                                            }
