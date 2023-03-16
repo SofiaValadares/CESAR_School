@@ -1,0 +1,97 @@
+-> Funções:
+As funções permitem quebrar tarefas grandes no codigo em tarefas menores, facilitando
+a leitura, atualização, e correção do codigo, extra nos permitir reusar o mesmo codigo
+em outros projetos e diminuir as fontes de ruídos de erros.
+
+Estrutura de uma função:
+
+tipo_de_retorno nome_da_função(lista_de_parametos){   
+    corpo_da_função
+}
+
+Exemplo de uma função:
+
+#include <stdio.h>
+
+int calc(int x, int y);
+
+int main(){
+    int a = 1, b = 4;
+    int soma;
+
+    soma = calc(a, b);
+    printf("%d", soma);
+
+    return 0;
+}
+
+int calc(int x, int y){
+    int rels
+
+    rels = a+b;
+
+    return rels;
+}
+
+
+-> Prototipo ou declaração:
+Geralmente colocada no início do programa (antes do main), estabelece o tipo de uma 
+função e os argumento que ela recebe. Protótipos fornecem ao compilador as informações 
+necessárias sobre o tipo da função, o número e o tipo dos argumentos.
+
+int calc(int x, int y);
+
+Importante: O protótipo de uma função deve preceder a sua a sua definição e sua chamada.
+Obs.: Os arquivos .h contém os protótipos das funções chamadas no seu programa.
+
+
+-> Tipo:
+Apos ser chamada na main, o comando return marca o fim da função e ira retornar uma variavel
+do tipo definido para a função.
+Existem funções que não rertornam nada e o uso do comendo return se faz desnecessario,
+essas são chamadas de funções do tipo void.
+
+Obs.: o comando return pode retornar somente um único valor para a função que chama.
+
+
+-> Chamada:
+Um progama pode conter uma ou mais funções, e uma delas dever ser a main(). A execução
+do programa sempre começa na main().
+As funções são ativadas por uma chamada de função. A chamada de função especifica o nome
+da função e fornece informações que ela necessita para realizar a tarefa designada.
+
+int main(){
+    int a = 1, b = 4;
+    int soma;
+
+    soma = calc(a, b);
+    printf("%d", soma);
+
+    return = 0;
+}
+
+-> Definição ou implementação:
+É onde escrevemos o codigo em C que a função ira execultar. Tudo que estiver dentro
+das chaves constitui o corpo da função.
+A definição de uma função começa com seu tipo, nome e seus parametros. Outras variareis, 
+extra as dos paramentos, podem ser definidas nas primeiras linhas da função;
+
+int calc(int x, int y){
+    int rels
+
+    rels = a+b;
+
+    return rels;
+}
+
+
+-> Variávies Locais e Globais:
+Locais: Declaradas dentro de funções/blocos e podem ser usadas apenas pelas instruções 
+dentro dos respectivos blocos e funções.
+
+Globais: Definidas fora de uma função (inclusive a main()), usualmente no começo do 
+programa. Estas variáveis mantém seus valores ao longo do tempo de vida do programa e 
+podem ser acessadas por qualquer função após sua declaração.
+obs.: Um programa pode ter variáveis globais e locais com o mesmo nome, mas as variáveis locais têm precedência dentro de uma função.
+
+Parâmetros: Parâmetros de uma função são tratados como uma variável local dentro de uma função.

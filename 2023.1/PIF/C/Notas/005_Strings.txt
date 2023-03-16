@@ -1,0 +1,3 @@
+-> Strings:
+Uma string é um array de caracteres que termina com o caractere NULL ('\0'). Ela pode
+incluir letras, dígitos e vário caracteres especiais como +,-,*,$.

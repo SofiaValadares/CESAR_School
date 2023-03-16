@@ -1,0 +1,38 @@
+Um tipo de dado complexo
+
+tipo uma lista
+
+com uso consiguimos construir novos tipos de dados
+
+a struct tem elemantos, n variavie
+
+MyStruct - definicao do tipo                        int, float, double, etc...
+struct_var - nome da variavie
+
+definir tipo:
+struct point{
+    int x;
+    int y;
+}
+
+definir variavel:
+struct point p1;
+
+acessar valores:
+p1.x = 1;
+p1.y = 3;
+struct point p2 = {2,5};
+
+
+pode se criar um array de uma struct
+
+struct aluno{
+    int mat;
+    char nome[100];
+    int periodo;
+}
+
+struct aluno sala[100];
+
+geralmente defini tipo struct no inicio no inicio do programa, definição global, fora da main(), antes da definição das funções
+
