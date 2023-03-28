@@ -1,3 +1,124 @@
 -> Strings:
 Uma string é um array de caracteres que termina com o caractere NULL ('\0'). Ela pode
 incluir letras, dígitos e vário caracteres especiais como +,-,*,$.
+
+char cor[] = "azul";
+  - array de 5 elementos (incluindo '\0')
+char *corptr = "azul";
+  - ponteiro que aponta para a string azul em algum lugar da memoria
+char cor_2[] = {'a','z','u','l','\0'};
+  - igual ao primeiro caso
+
+--> Código ASCII:
+O teclado gera letras, numeros e caracteces de pontuação por meio dos 256 códigos ASCII
+(0 a 255). Cada um destes caracteres ocupa um byte de memórida
+
+Podemos encontrar a tabela ASCII ao pesquisar ela na internet facilmente.
+
+--> Manipulação e Comparação de Strings:
+
+strcpy(*s1, *s2)        | Copia a string s2 para a string s1. O valor de s1 é retornado;
+                        |
+strncpy(*s1, *s2 ,n)    | Copia no máximo n caracteces da string s2 para a string s1;
+                        |
+strcat(*s1, *s2)        | Anexa a string s2 na string s1. O primeiro caractere de s2 é 
+                        | sobrescrito ao caractere NULL de terminação de s1. O valor de s1
+                        | é retornado;
+                        |
+strncat (*s1, *s2, n)   | Anexa no máximo n caracteces da string s2 a s1. O primeiro caractere
+                        | se s2 é sobrescrito ao caractere NULL de terminação de s1. O valor
+                        | de s1 é retornado;
+                        |
+strcmp(*s1, *s2)        | Compara a string s1 com a string s2. A função retorna 0, menor do
+                        | do que 0 ou maior do que 0 se s1 for igual a, menor do que ou maior
+                        | do que s2;
+                        |
+strncmp(*s1, *s2, n)    | Compara até n caracteres da string s1 com a string s2. A função 
+                        | retorna 0, menor do que 0 ou maior do que 0 se s1 for igual a, menor
+                        | do que ou maior do que s2;
+                        |
+size_t strlen(*s1)      | Retorna o tamanho da string. Conta a quantidade de caracteres até o 
+                        | caractere de terminação "\0", sem incluí-lo na contage;
+                        |
+s1[0] = '\0'            | Limpa a string ao definir o inicio dela como seu fim;
+
+obs: essas funções são da bibliotema string.h.
+
+--> Entrada e Saída:
+
+COMANDOS BASICOS DE ENTRADA:
+scanf("%s", str);
+    - Ótimo para entrada formatada, porém para a leitura no primeiro espaço em branco.
+
+gets(str);
+    - Capaz de ler toda a strings (independente de espaços)
+    - Descontinuada - alguns compiladores podem recomendar não usar tal função
+    - Não possui proteção para buffer overflow dado que recebe apena sum parâmetro, a
+      string a ser lida
+    - Ler linha por linha até a quebra de linha ou quando o usuário aperta ENTER
+
+fgets(str,51,stdin);
+    - Geralmente usado para ler de um arquivo
+    - Três parâmetros - a string, o tamanho máximo da mesma (incluindo \0), e o arquivo
+      de leitura. A proteção para buffer overflow é garantida pelo parâmetro do tamanho
+      da string;
+    - stdin significa entrada do usuário
+
+GETCHAR E PUTCHAR:
+
+ch = getchar() - ler caractere por caractere.
+putchar(ch) - imprime o caractere passado como parâmentro.
+
+while(ch != '\n'){
+    str[i] = ch;
+    i++;
+    ch = getchar();
+}
+str[i] = '\0';
+
+CARÁCTERE EOF:
+Usado quando não sabemos quantas linhas de código iremor ler, indica o final do arquivo.
+obs.: por ser um caractere, pode ser lido através de getchar ou getc().
+
+while((ch = getchar()) != EOF) - repete o processo de leitura enquanto ainda não alcançamos
+                                 o final do arquivo.
+
+
+TABELA DE COMANDOS:
+
+getchar()           | Obtém o próximo caractere do dispositivo padrão de entrada e retorna como 
+                    | inteiro (valor inteiro é usado para receber EOF, que indica uma falha);
+                    |
+fgetc(file),        | Obtém o próximo caractere dentro de um arquivo e retorna como inteiro;
+get(file)           |
+                    |
+putchar(c)          | Imprime o caractere armazenado em c no dispositivo padrão de saída;
+                    |
+put(*s)             | Imprime a string s seguida de um caractere de nova linha;
+                    |
+putc(c,file)        | Imprime o caractere armazenado em c em um arquivo;
+                    |
+sprint(*s,array)    | Equivalente ao printf exceto que a saída é armazenada no array s em vez 
+                    | de ser impressa na tela;
+sscanf(*s,array)    | Equivalente ao scanf exceto que a entrada é lida no array S em vez de ser 
+                    | lida no teclado;
+
+obs: essas funções são da bibliotema stdio.h
+
+--> Conversão de Strings:
+
+atof(*S)                | Converte uma string S em double;
+                        |
+atoi(*S)                | Converte uma string S em int;
+                        |
+atol(*S)                | Converte uma string S em inteiro longo (long);                        
+                        |
+strtod(*S, *ptr)        | Converte a string S em double. A sequência de algarismos e convertida em 
+                        | double e o restante da string é atribuído ao ponteiro *ptr
+                        |
+strtol(*S,*ptr,base)    | Converte a string S em long. A sequência de algarismos é convertida em long 
+                        | e o restante da string é atribuído ao ponteiro *ptr. A base indica que o valor 
+                        | a ser convertido pode estar no formato octal (base 8), decimal (base 10), 
+                        | ou hexadecimal(base 16).
+
+obs: essas funções são da bibliotema stdlib.h
