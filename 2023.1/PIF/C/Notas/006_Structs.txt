@@ -1,38 +1,66 @@
-Um tipo de dado complexo
-
-tipo uma lista
-
-com uso consiguimos construir novos tipos de dados
-
-a struct tem elemantos, n variavie
-
-MyStruct - definicao do tipo                        int, float, double, etc...
-struct_var - nome da variavie
-
-definir tipo:
-struct point{
-    int x;
-    int y;
-}
-
-definir variavel:
-struct point p1;
-
-acessar valores:
-p1.x = 1;
-p1.y = 3;
-struct point p2 = {2,5};
+--> Struct:
+É um tipo de dado complexo, com o qual consiguimos construir novos tipos de dado. Ela funciona como uma lista 
+com elemestos de diferentes tipos.
+    - A struct é como uma gaveta com varias caixas, que são as variaveis
 
 
-pode se criar um array de uma struct
+definir tipo struct:    | definir variavel:     | acessar variavel:
+                        |                       |
+struct tipo{            | struct tipo p1;       | p1.x = 1;
+    int x;              |                       | p1.y = 3;
+    int y;              | struct tipo p2[10];   | p2[10] = {2, 5}; 
+};                      |                       |
 
-struct aluno{
-    int mat;
-    char nome[100];
-    int periodo;
-}
+É possivel criar arrays com varias struct.
 
-struct aluno sala[100];
+obs.: uma struct não tem variaveis, ela é uma variavel, uma struct tem elementos.
+obs2.: geralmente defini tipo struct no inicio no inicio do programa (definição global, fora da main) antes da 
+definição das funções.
 
-geralmente defini tipo struct no inicio no inicio do programa, definição global, fora da main(), antes da definição das funções
+É possivel se chamar structs em uma funções:
+int função(struct tipo variavel){
+    ......
+};
 
+
+DISTANCIA DE 2 PONTOS EM UM PLANO CARTESIANO:
+dist = sqrt((double)(pt.x - maxpt.x)^2 + (double)(pt.y - maxpt.y))^2;
+
+--> Enumerations:
+Criam variáriaveis que possuem valores dentro de um grupo de contantes.
+    - elas são compativeis com o tipo inteiro 
+    - permitem criar "tipos de dados" mais significativos
+
+EXEMPLO:
+  enum week { sun = 0, mon, tue, wed, thu, fri, sat };
+  enum week input;
+
+  printf("Digite o dia da semana (domingo = 0, segunda = 1, etc): ");
+  scanf("%d", ((int*)&input));
+  
+  switch (input) {
+  case sun:
+    printf("\nHoje é domingo, pé de cachimbo!\n");
+    break;
+    ....
+    };
+
+--> Unions:
+Criam variáveis que compartilham a mesma área de memória e podem ser acessadas sob a ótica de tipos 
+de dados diferentes.
+    - Uma variavel que tem um valor unico, mas pode ser de varios tipos;
+
+EXEMPLO:
+  union intChar {
+    unsigned int i;
+    unsigned char c[4];
+  };
+
+  union intChar input;
+
+  printf("Digite um numero: ");
+  scanf("%u", &(input.i));
+
+  for (int i = 0; i < 4; i++) {
+    printf("O byte %d de input é %u\n", i, input.c[i]);
+  }

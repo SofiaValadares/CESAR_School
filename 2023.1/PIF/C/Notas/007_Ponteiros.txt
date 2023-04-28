@@ -1,0 +1,12 @@
+--> Ponteiros:
+Enquanto uma variavel tem um tipo e um valor, o ponteiro contem o endereço de memória dessa variavel.
+
+char c;
+char *p; 
+
+p = &c;                define p como o endereço de c
+
+printf("%d", p);       retorna um endereço de ip
+printf("%d",*p);       retorna o valor contido na quele endereço
+
+OPERADORES E OPERAÇÕES

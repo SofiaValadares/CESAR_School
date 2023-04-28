@@ -11,7 +11,6 @@ int main(void){
     while (n!=0){
         char str[1000], str2[1000], ch;
         int i;
-        int i;
         int k = 0;
         int y;
 
