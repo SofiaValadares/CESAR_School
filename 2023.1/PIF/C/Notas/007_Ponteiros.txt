@@ -9,4 +9,35 @@ p = &c;                define p como o endereço de c
 printf("%d", p);       retorna um endereço de ip
 printf("%d",*p);       retorna o valor contido na quele endereço
 
+
 OPERADORES E OPERAÇÕES
+
+operador de endereço    |  &  |   opera sobre o nome de uma variável e resulta seus endereço;
+                        |     |
+operador indireto       |  *  |   opera sobre o endereço de uma variável (ou sobre um ponteiro) e resulta seu valor;
+
+obs.: a unidade básica de ponteiros é o número de bytes do tipo apontado;
+
+y = *ip +10     | Pega o valor apontado por ip, adiciona 10, e adiciona oresultado em y;
+                |
+*ip+=1          | Incrementa o valor contido no espaço de memória apontado por ip;
+++*ip           |
+(*ip)**         |
+                |
+*(ip + 1)       | Aponta para o próximo endereço de memória;
+
+
+PONTEIROS E ARRAYS
+O nome de um arrays/matriz é um ponteiro constante
+Podemos usar a ultima opereção para apontar para um proximo elemento de uma arrays
+
+Exemplo em codigo:
+
+int ordem[3];                   
+                                
+for(int i=0; i<3; i++){         |   for(int i=0; i<3; i++){
+    printf("%d\n", ordem[i]);   |       printf("%d\n", *(ordem+1)); 
+}                               |   }
+
+
+PONTEIROS E FUNÇÃES
