@@ -9,6 +9,8 @@ p = &c;                define p como o endereço de c
 printf("%d", p);       retorna um endereço de ip
 printf("%d",*p);       retorna o valor contido na quele endereço
 
+obs.: É possivel criar um ponteiro de um ponteiro
+
 
 OPERADORES E OPERAÇÕES
 
@@ -39,5 +41,37 @@ for(int i=0; i<3; i++){         |   for(int i=0; i<3; i++){
     printf("%d\n", ordem[i]);   |       printf("%d\n", *(ordem+1)); 
 }                               |   }
 
+obs.: Também é possivel criar um arrays de ponteiros 
+char *naipe[4] = {“COPAS”, ”OUROS”, “PAUS”, “ESPADAS”}
 
 PONTEIROS E FUNÇÃES
+Quando chamamos um elemento em uma função chamamos uma copia desse elemento, já ao chamar um ponteiro de um elemento
+chamamos o espaço de mémoria desse elementos, fazendo com que ele seja alteravel;
+
+Ponteiros permite que uma função retorne mais de um valor para sua função chamadora. Quando passamos endereços de 
+variáveis, a função pode alterar a variável original;
+
+
+Função chamada: deverá criar variáveis para armazenar os endereços que estiver recebendo (ponteiro variável);
+
+void troca(int *a, int *b){
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+Função chamadora: passa os endereços das suas variáveis usando o operador de endereços &;
+
+int main(void){
+    int a = 5;
+    int b = 2;
+
+    troca(&a, &b);
+}
+
+PONTEIRO VOID
+Ponteiro de propósito geral que pode apontar para qualquer tipo de dado, utilizados caso uma função receba ou 
+retorne um ponteiro genérico e opere independente do tipo de dado apontado;
+
+Qualquer endereço pode ser atribuído a um ponteiro void. Contudo, o conteúdo da variável apontada por um ponteiro void 
+não pode ser acessado por meio desse ponteiro. É necessário criar outro ponteiro e fazer a conversão de tipos;
