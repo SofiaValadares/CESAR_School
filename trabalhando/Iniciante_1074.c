@@ -1,15 +1,57 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+struct pilhas {
+    char letra;
+    struct pilhas *next;
+};
+
+void novo(struct pilhas **comeco, char letra);
+char remover(struct pilhas **comeco);
 
 int main(void){
-    int n[10];
+    struct pilhas *comeco = NULL;
+    char *conta;
+    char letra;
 
-    scanf("%d", &n[0]);
+    while((letra = getchar()) == 1){
+      scanf('&s', conta);
 
-    for(int i=1; i<10; i++){
-        n[i] = n[i-1]*2;
+      for(int i; conta[i]!='\0'; i++){
+        if(conta[i] =='('){
+          novo(&comeco, conta[i]);
+        }else if(conta[i]==')'){
+          if(comeco == NULL || remover(&comeco) != '('){
+            novo(&comeco, conta[i]);
+          }
+        }
+      }
+        if(comeco == NULL){
+            printf("correct\n");
+        }else{
+            printf("incorrect\n");
+        }
+
+        while(comeco != NULL){
+            remover(&comeco);
+        }
     }
+}
 
-    for(int i=0; i<10; i++){
-        printf("N[%d] = %d\n", i, n[i]);
-    }
+void novo(struct pilhas **comeco, char letra){
+    struct pilhas *novo= (struct pilhas*)malloc(sizeof(struct pilhas));
+
+    novo->letra = letra;
+    novo->next =comeco;
+    comeco = novo;
+}
+
+char remover(struct pilhas **comeco){
+    struct pilhas *temp = *comeco;
+
+    char letra = temp->letra;
+    comeco = (*comeco)->next;
+    free(temp);
+
+    return letra;
 }
