@@ -1,0 +1,45 @@
+!!
+!!
+ls
+ls &
+/bin/ls; /bin/ps; style parallel; ls; ps
+ls; ps
+style sequential
+ls -l | sort -k 5
+date > datafile
+ls -l >> datafile
+date > datafile
+ls -l >> datafile2
+a.out < inputifle
+c.out < inputifle
+a.out < inputifle2
+/bin/ls; /bin/ps
+ls; !!; !!
+ps; !!
+ls;
+!!
+!!
+ls; 
+style parallel
+!!
+ls
+/bin/ls; /bin/ps
+ls -l | sort -k 5
+date > datafile
+ls -l >> datafile
+date > datafile
+ls -l >> datafile2
+a.out < inputifle
+c.out < inputifle
+a.out < inputifle2
+/bin/ls; /bin/ps
+ls; !!; !!
+ps; !!
+ls;
+!!
+!!
+ls; 
+style sequential
+sofia
+b.out
+ls; exit; ps

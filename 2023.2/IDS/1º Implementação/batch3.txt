@@ -1,0 +1,2 @@
+ls -l; echo 0; ls -l | sort -k 1
+exit
